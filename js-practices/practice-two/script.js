@@ -1,20 +1,15 @@
-function PrintResult() {
-  event.preventDefault();
-  const n = document.getElementById("numberInput").value;
-  function factorial(n) {
-    let answer = 1;
-    if (n == 0 || n == 1) {
-      return answer;
-    } else if (n > 1) {
-      for (let i = n; i >= 1; i--) {
-        answer = answer * i;
-      }
-      return answer;
-    } else {
-      return "number has to be positive.";
-    }
+function factorial(n) {
+  if (n == 1 || n == 0) {
+    return n;
   }
-  answer = "Factorial of " + n + " is " + factorial(n);
-  console.log(answer);
-  document.getElementById("result").innerHTML= answer;
+  return n * factorial(n - 1);
+}
+
+const num = prompt("Enter number to find factorial of number :");
+if (num >= 0) {
+  const answer = "Factorial of " + num + " is " + factorial(num);
+  document.getElementById("result").innerHTML = answer;
+} else {
+  const error = "Enter a positive number.";
+  document.getElementById("result").innerHTML = error;
 }
