@@ -1,4 +1,4 @@
-function printResult(){
+function printFibonacci(){
     event.preventDefault();
     const number = document.getElementById('setup').value;
     let n1 = 0, n2 = 1, nextTerm;
